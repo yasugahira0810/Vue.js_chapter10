@@ -18,7 +18,8 @@ slideNumber: true
 --
 
 9章
-
+foo@domain.com
+12345678
 
 
 状態Auth
@@ -32,6 +33,12 @@ slideNumber: true
 propsData1[参考]([https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdata%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9](https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdataの基本的な使い方))
 
 `propsData` は親コンポーネントから `props` として渡されたものとしてテストで使用できます。
+
+KbnButtonのdisabledのfalseの試験、デフォルト値で試験してしまっているように見える。
+
+明示的にfalseにするようitの中で設定すべきでは？問い合わせてみる
+
+3.3.1
 
 ---
 
