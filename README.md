@@ -12,9 +12,121 @@ slideNumber: true
 
 ---
 
-## はじめに
+:class="classes" データバインディングをするv-bindの省略記法
+@click="handleClick" イベントハンドリングをするv-onの省略記法
 
 --
+
+9章
+
+
+
+状態Auth
+
+プロパティ: Vueインスタンスの挙動を決める要素
+
+イベント: 
+
+スロット（slot要素）
+
+propsData1[参考]([https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdata%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9](https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdataの基本的な使い方))
+
+`propsData` は親コンポーネントから `props` として渡されたものとしてテストで使用できます。
+
+---
+
+## 10章概要
+
+大きく２つに分かれる
+
+- 10.2〜10.4 ログインページの実装
+- 10.5〜10.9 Vue.js開発を支える技術
+
+なおボードページ、タスク詳細ページの実装の解説はしない（書籍自体に解説が載っていないので）  
+
+また書籍はテスト駆動開発で解説しておりコードも載っているが、内容が古いとのことなので詳細な解説はしない
+
+---
+
+## 10.1 開発方針の整理
+
+- **ログインページ**
+  - **ログインページのコンポーネント**
+  - **ログインページのデータフロー**
+  - **全体のルーティング**
+- ボードページ
+- タスク詳細ページ
+
+**加えて開発に必要な技術**
+
+---
+
+
+
+## 10.2 コンポーネントの実装
+
+![KanbanApp](./img/KanbanApp.png)
+
+- ボトムアップ的なアプローチを推奨
+
+### 10.2.1 KbnButtonコンポーネント
+
+- API設計は「9.2.3 KbnButtonコンポーネントのAPI」参照
+
+  ### 10.2.2 KbnLoginFormコンポーネント
+
+### 10.2.3 KbnLoginViewコンポーネント
+
+- データフロー設計は「9.3.2 データフロー」参照
+- ルーティング設計は「9.4 ルーティング設計」参照
+
+*10.2で2H*
+
+--
+
+## 10.3 データフローの実装
+
+*10.3で2H*
+
+---
+
+## 10.4 ルーティングの実装
+
+1H
+
+
+
+---
+
+## 10.5 開発サーバーとデバッグ
+
+2H
+
+
+
+---
+
+## 10.6 E2Eテスト
+
+1.5H
+
+---
+
+## 10.7 アプリケーションのエラーハンドリング
+
+3H
+
+---
+
+## 10.8 ビルドとデプロイ
+
+0.5H
+
+## 10.9 パフォーマンス測定・改善
+
+3H
+
+計16H
 
 ### *注意事項*
 
@@ -325,7 +437,7 @@ var vm = new Vue({ //2.3 Vueオブジェクト
 ### DevToolsでわかる2つのこと❷
 
 - dataに与えたキー名（ここではitems）がVueインスタンスの直下でプロパティとして公開されている
-<center><img src="fig/fig_2.5_3.png" style="width:100%;"/></center>
+<center><img src="fig/fig_2.5_3.png" style="width:100%;"/></center>
 - <span style="font-size: 60%">*console.log(vm.items)でitemsの内容を取得できる。console.log(vm.data.items)はエラー*</span>
 
 --
@@ -340,7 +452,7 @@ var vm = new Vue({ //2.3 Vueオブジェクト
 
 ### データ変更の例
 
-<center><img src="fig/fig_2.5_4.png" style="width:100%;"/></center>
+<center><img src="fig/fig_2.5_4.png" style="width:100%;"/></center>
 - <span style="font-size: 60%">*左が変更前、右が変更後。vm.items[0].name="万年筆"」と打ってターン！とすればDOM要素も書き換わる*</span>
 
 --
