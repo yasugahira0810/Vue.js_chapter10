@@ -72,7 +72,9 @@ spy?
 
 
 
-### 10.2 コンポーネントの実装
+## 10.2 コンポーネントの実装
+
+--
 
 ![KanbanApp](./img/KanbanApp.png)
 
@@ -88,7 +90,7 @@ spy?
 
 --
 
-[コード](./kanban-app/src/components/atoms/KbnButton.vue)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/atoms/C)
 
 --
 
@@ -104,7 +106,14 @@ spy?
 
 --
 
-[コード](./kanban-app/src/components/atoms/KbnButton.vue)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/molecules/KbnLoginForm.vue)
+
+--
+
+![KbnLoginFormList](./img/KbnLoginFormList.png)
+
+- validation, valid, disableLoginActionプロパティは算出プロパティ
+- onloginプロパティは外部コンポーネントに処理を任せているので、コールバック時のログインOK/NGのみテスト
 
 --
 
@@ -120,29 +129,89 @@ spy?
 
 - データフロー設計は「9.3.2 データフロー」参照
 - ルーティング設計は「9.4 ルーティング設計」参照
-
-*10.2で2H*
+- ログイン処理について検証
+- KbnLoginFormコンポーネントのスタブを利用
 
 --
 
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/templates/KbnLoginView.vue)
+
+--
+
+![KbnLoginViewTest](./img/KbnLoginViewTest.png)
+
+---
+
 ## 10.3 データフローの実装
 
-*10.3で2H*
+--
+
+### 10.3.1 loginアクションハンドラ
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/actions.js)
+
+--
+
+![LoginActionHandlerTest](./img/LoginActionHandlerTest.png)
 
 ---
 
-## 10.4 ルーティングの実装
+### 10.3.2 AUTH_LOGINミューテーションハンドラ
 
-1H
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/mutations.js)
 
+--
+
+![MutationHandlerTest](./img/MutationHandlerTest.png)
+
+---
+
+### 10.3.3 AuthAPIモジュール
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/api/auth.js)
+
+--
+
+![AuthAPIModuleTest](./img/AuthAPIModuleTest.png)
+
+---
+
+### 10.4 ルーティングの実装
+
+--
+
+### 10.4.1 beforeEachガードフックを活用したナビゲーションガード
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/router/guards.js)
+
+--
+
+![BeforeEachGuardHookTest](./img/BeforeEachGuardHookTest.png)
 
 
 ---
 
-## 10.5 開発サーバーとデバッグ
+## 10.5
+## 開発サーバーとデバッグ
 
-2H
+- 10.5.1 開発サーバーによる開発
+  + タスクコマンドnpm run devを解説
+- 10.5.2 Vue DevToolsによるデバッグ
+  + 開発効率化拡張機能を解説
 
+--
+
+### 10.5.1 開発サーバーによる開発
+
+- バックエンドのAPIサーバーを作成していないので、ログインボタンをクリックしても404になる
+- 対処法は以下の２つ。今回は後者を採用
+  1. APIのプロキシ機能を利用してバックエンドとインテグレートする
+  2. ローカル環境の開発サーバーに該当エンドポイントのモックを実装する
+
+
+--
+
+### 10.5.2 Vue DevToolsによるデバッグ
 
 
 ---
