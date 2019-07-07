@@ -241,7 +241,18 @@ spy?
 
 ## 10.6 E2Eテスト
 
-1.5H
+- 単体テストだけでは実際の動作を確認できない
+- 手動テストは作業量が膨大で大変
+- E2Eテストフレームワークによる自動化が一般的
+  + ここではNightWatchを使う
+
+--
+
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/e2e/specs/login.js)
+
+--
+
+![e2eTest](./img/e2eTest.png)
 
 ---
 
