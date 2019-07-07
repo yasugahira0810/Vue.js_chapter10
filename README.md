@@ -40,6 +40,8 @@ KbnButtonのdisabledのfalseの試験、デフォルト値で試験してしま�
 
 3.3.1
 
+spy?
+
 ---
 
 ## 10章概要
