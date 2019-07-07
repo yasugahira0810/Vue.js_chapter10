@@ -208,11 +208,34 @@ spy?
   1. APIのプロキシ機能を利用してバックエンドとインテグレートする
   2. ローカル環境の開発サーバーに該当エンドポイントのモックを実装する
 
+--
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/build/dev-server.js)
+
+- 以下のレスポンスを返す簡易的な実装
+![dev-serverResponse](./img/dev-serverResponse.png)
 
 --
 
+- Vue UIのstartを実行すると「npm run dev」が実行されるので、これでいい感ある
+
+![VueUIStart](./img/VueUIStart.png)
+
+---
+
 ### 10.5.2 Vue DevToolsによるデバッグ
 
+- Chromeに拡張機能「Vue DevTools」を追加する
+- Vue.jsが検知されるとアイコンが有効になる
+- ディベロッパーツールに「Vue」タブが追加される
+
+![VueDevTools1](./img/VueDevTools1.png)
+
+--
+
+- 書籍でピックアップされている機能
+
+![VueDevTools2](./img/VueDevTools2.png)
 
 ---
 
