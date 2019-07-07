@@ -241,6 +241,8 @@ spy?
 
 ## 10.6 E2Eテスト
 
+--
+
 - 単体テストだけでは実際の動作を確認できない
 - 手動テストは作業量が膨大で大変
 - E2Eテストフレームワークによる自動化が一般的
@@ -258,7 +260,54 @@ spy?
 
 ## 10.7 アプリケーションのエラーハンドリング
 
-3H
+--
+
+- 単体テストやE2Eテストを見てきたが、想定できないエラーが発生する可能性はある
+- Vue.jsのようなインタラクティブなUIを実装したアプリではエラーハンドリングは特に重要
+- エラーを捕捉して適切にエラーハンドリングしないと、UIが壊れる可能性がある
+- Vue.jsが提供するエラーハンドリングの仕組み
+  + 子コンポーネントのエラーハンドリング
+  + グローバルなエラーハンドリング
+
+--
+
+### 10.7.1 子コンポーネントのエラーハンドリング
+
+![errorCaptured1](./img/errorCaptured1.png)
+
+--
+
+![errorCaptured2](./img/errorCaptured2.png)
+
+--
+
+![errorCaptured3](./img/errorCaptured3.png)
+
+--
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/ErrorBoundary.vue)
+
+--
+
+### 10.7.2 グローバルなエラーハンドリング
+
+![errorHandler1](./img/errorHandler1.png)
+
+--
+
+![errorHandler2](./img/errorHandler2.png)
+
+--
+
+![errorHandler3](./img/errorHandler3.png)
+
+--
+
+![errorHandler4](./img/errorHandler4.png)
+
+--
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/main.js)
 
 ---
 
