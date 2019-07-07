@@ -72,17 +72,49 @@ spy?
 
 
 
-## 10.2 コンポーネントの実装
+### 10.2 コンポーネントの実装
 
 ![KanbanApp](./img/KanbanApp.png)
 
 - ボトムアップ的なアプローチを推奨
 
+---
+
 ### 10.2.1 KbnButtonコンポーネント
 
 - API設計は「9.2.3 KbnButtonコンポーネントのAPI」参照
+- 書籍ではテスト駆動開発のスタイルで開発を進めている
+- 9.2.3の設計項目に対してテストしている
 
-  ### 10.2.2 KbnLoginFormコンポーネント
+--
+
+[コード](./kanban-app/src/components/atoms/KbnButton.vue)
+
+--
+
+![KbnButtonTest](./img/KbnButtonTest.png)
+
+---
+
+### 10.2.2 KbnLoginFormコンポーネント
+
+- ログインフォーム
+- 入力情報をバリデーションする役割を持つ
+- 認証処理はAuth APIモジュールに任せている
+
+--
+
+[コード](./kanban-app/src/components/atoms/KbnButton.vue)
+
+--
+
+![KbnLoginFormTest1](./img/KbnLoginFormTest1.png)
+
+--
+
+![KbnLoginFormTest2](./img/KbnLoginFormTest2.png)
+
+---
 
 ### 10.2.3 KbnLoginViewコンポーネント
 
