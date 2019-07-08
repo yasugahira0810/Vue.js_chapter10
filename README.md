@@ -44,7 +44,7 @@ slideNumber: true
 
 --
 
-## 10章概要
+## 10章のスコープ（概要）
 
 - 大きく２つに分かれる
   + 10.2〜10.4 ログインページの実装
@@ -53,35 +53,49 @@ slideNumber: true
 
 ---
 
-## 10.1 開発方針の整理
+## 10.1
+## 開発方針の整理
 
 --
 
-- ログインページ
-  + ログインページのコンポーネント
-  + ログインページのデータフロー
-  + 全体のルーティング
-- （ボードページ）
-- （タスク詳細ページ）
-- 加えて開発に必要な技術
+- テスト駆動開発のスタイルで解説する
 
 ---
 
-## 10.2 コンポーネントの実装
+## 10.2
+## コンポーネントの実装
 
 --
 
-<img src="img/KanbanApp.png" style="width:60%;" alt="KanbanApp"/>
+![KanbanApp](img/KanbanApp.png)
 
-- ボトムアップ的なアプローチでの実装を推奨
+- 実装順序はボトムアップ的なアプローチを推奨
+  + 10.2.1 KbnButton  
+  + 10.2.2 KbnLoginForm  
+  + 10.2.3 KbnLoginView
 
 --
 
 ### 10.2.1 KbnButtonコンポーネント
 
 - API設計は「9.2.3 KbnButtonコンポーネントのAPI」参照
-- 書籍ではテスト駆動開発のスタイルで開発を進めている
 - 9.2.3の設計項目に対してテストしている
+
+--
+
+<img src="img/KbnButtonTest.png" style="width:60%;" alt="KbnButtonTest"/>
+
+--
+
+**KbnButtoの例１**
+
+<img src="img/KbnButton1.png" style="width:70%;" alt="KbnButton1"/>
+
+--
+
+**KbnButtoの例２**
+
+<img src="img/KbnButton2.png" style="width:70%;" alt="KbnButton2"/>
 
 --
 
@@ -89,9 +103,9 @@ slideNumber: true
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/atoms/KbnButton.vue)
 
---
-
-<img src="img/KbnButtonTest.png" style="width:60%;" alt="KbnButtonTest"/>
+- :class="classes: データバインディングをするv-bindの省略記法"(2.9.2)
+- @click="handleClick": イベントハンドリングをするv-onの省略記法(2.9.4)
+- slot: 親のコンポーネントごとに子のコンポーネントの内容を書きかえる仕組み(3.4.3)
 
 --
 
@@ -141,7 +155,8 @@ slideNumber: true
 
 ---
 
-## 10.3 データフローの実装
+## 10.3
+## データフローの実装
 
 --
 
@@ -189,7 +204,8 @@ slideNumber: true
 
 ---
 
-## 10.4 ルーティングの実装
+## 10.4
+## ルーティングの実装
 
 --
 
@@ -210,7 +226,8 @@ slideNumber: true
 
 ---
 
-## 10.5 開発サーバーとデバッグ
+## 10.5
+## 開発サーバーとデバッグ
 
 --
 
@@ -256,7 +273,8 @@ slideNumber: true
 
 ---
 
-## 10.6 E2Eテスト
+## 10.6
+## E2Eテスト
 
 --
 
@@ -277,7 +295,8 @@ slideNumber: true
 
 ---
 
-## 10.7 アプリケーションのエラーハンドリング
+## 10.7
+## アプリケーションのエラーハンドリング
 
 --
 
@@ -334,7 +353,8 @@ slideNumber: true
 
 ---
 
-## 10.8 ビルドとデプロイ
+## 10.8
+## ビルドとデプロイ
 
 --
 
@@ -355,7 +375,8 @@ slideNumber: true
 
 ---
 
-## 10.9 パフォーマンス測定・改善
+## 10.9
+## パフォーマンス測定・改善
 
 --
 
