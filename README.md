@@ -18,7 +18,7 @@ slideNumber: true
 - *書籍の要約は正体、担当者の理解で書いているところは斜体で記載しています*
 - *権利関係で問題があればご指摘ください*
 - *vscode-revealで見てもらうことを想定しています(Windowsは改行コードをLFにして見てください)*
-- *コードは書いておらず、サンプルコードを動かしながら資料作ったので、コードの詳細は理解できていないです*
+- *コードは書いておらず、サンプルコードを動かしながら資料作ったので、コードの詳細までは理解できていないです...*
 
 --
 
@@ -27,7 +27,7 @@ slideNumber: true
 - 安ヶ平雄太（yasugahira0810）と申します
 - SIerのアジャイル推進部隊でスクラムマスターしてます  
   その前はインフラエンジニアだったので真面目にJSやVue.js使ってないです
-- 去年の輪読会で作った資料たち
+- これまでの輪読会で作った資料たち
   + [猫本 3章 双方向データバインティング](https://github.com/yasugahira0810/vuejs_chapter3)
   + [猫本 8章 Vuex](https://github.com/yasugahira0810/vuejs_chapter8)
   + [Vue.js入門 2章 Vue.jsの基本](https://github.com/yasugahira0810/Vue.js_chapter2)
@@ -39,11 +39,10 @@ slideNumber: true
 
 - :class="classes" データバインディングをするv-bindの省略記法
 - @click="handleClick" イベントハンドリングをするv-onの省略記法
-- アプリのアカウント: foo@domain.com　/　12345678
-- propsData[参考]([https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdata%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9](https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdataの基本的な使い方))
-  + `propsData` は親コンポーネントから `props` として渡されたものとしてテストで使用できる
+- ログイン情報: foo@domain.com/12345678
+- propsDataは親コンポーネントからpropsとして渡されたものとしてテストで使用できる[[参考](https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdata%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9)]
 
----
+--
 
 ## 10章概要
 
@@ -56,14 +55,15 @@ slideNumber: true
 
 ## 10.1 開発方針の整理
 
-- **ログインページ**
-  - **ログインページのコンポーネント**
-  - **ログインページのデータフロー**
-  - **全体のルーティング**
-- ボードページ
-- タスク詳細ページ
+--
 
-**加えて開発に必要な技術**
+- ログインページ
+  + ログインページのコンポーネント
+  + ログインページのデータフロー
+  + 全体のルーティング
+- （ボードページ）
+- （タスク詳細ページ）
+- 加えて開発に必要な技術
 
 ---
 
@@ -71,9 +71,9 @@ slideNumber: true
 
 --
 
-![KanbanApp](./img/KanbanApp.png)
+<img src="img/KanbanApp.png" style="width:60%;" alt="KanbanApp"/>
 
-- ボトムアップ的なアプローチを推奨
+- ボトムアップ的なアプローチでの実装を推奨
 
 --
 
@@ -85,11 +85,13 @@ slideNumber: true
 
 --
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/atoms/C)
+**KbnButton.vue**
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/atoms/KbnButton.vue)
 
 --
 
-![KbnButtonTest](./img/KbnButtonTest.png)
+<img src="img/KbnButtonTest.png" style="width:60%;" alt="KbnButtonTest"/>
 
 --
 
@@ -100,6 +102,8 @@ slideNumber: true
 - 認証処理はAuth APIモジュールに任せている
 
 --
+
+**KbnLoginForm.vue**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/molecules/KbnLoginForm.vue)
 
@@ -122,12 +126,12 @@ slideNumber: true
 
 ### 10.2.3 KbnLoginViewコンポーネント
 
-- データフロー設計は「9.3.2 データフロー」参照
-- ルーティング設計は「9.4 ルーティング設計」参照
 - ログイン処理について検証
 - KbnLoginFormコンポーネントのスタブを利用
 
 --
+
+**KbnLoginView.vue**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/templates/KbnLoginView.vue)
 
@@ -143,6 +147,12 @@ slideNumber: true
 
 ### 10.3.1 loginアクションハンドラ
 
+- データフロー設計は「9.3.2 データフロー」参照
+
+--
+
+**loginアクションハンドラの実装**
+
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/actions.js)
 
 --
@@ -152,6 +162,10 @@ slideNumber: true
 --
 
 ### 10.3.2 AUTH_LOGINミューテーションハンドラ
+
+--
+
+**AUTH_LOGINミューテーションハンドラの実装**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/mutations.js)
 
@@ -163,6 +177,10 @@ slideNumber: true
 
 ### 10.3.3 AuthAPIモジュール
 
+--
+
+**Auth APIモジュール**
+
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/api/auth.js)
 
 --
@@ -171,11 +189,17 @@ slideNumber: true
 
 ---
 
-### 10.4 ルーティングの実装
+## 10.4 ルーティングの実装
 
 --
 
 ### 10.4.1 beforeEachガードフックを活用したナビゲーションガード
+
+- ルーティング設計は「9.4 ルーティング設計」参照
+
+--
+
+**beforeEachガードフックの実装**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/router/guards.js)
 
@@ -186,13 +210,7 @@ slideNumber: true
 
 ---
 
-## 10.5
-## 開発サーバーとデバッグ
-
-- 10.5.1 開発サーバーによる開発
-  + タスクコマンドnpm run devを解説
-- 10.5.2 Vue DevToolsによるデバッグ
-  + 開発効率化拡張機能を解説
+## 10.5 開発サーバーとデバッグ
 
 --
 
@@ -205,7 +223,11 @@ slideNumber: true
 
 --
 
+**エンドポイント/auth/loginのモック**
+
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/build/dev-server.js)
+
+--
 
 - 以下のレスポンスを返す簡易的な実装
 ![dev-serverResponse](./img/dev-serverResponse.png)
@@ -245,6 +267,8 @@ slideNumber: true
 
 --
 
+**E2Eテストコード**
+
 [テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/e2e/specs/login.js)
 
 --
@@ -268,11 +292,11 @@ slideNumber: true
 
 ### 10.7.1 子コンポーネントのエラーハンドリング
 
-![errorCaptured1](./img/errorCaptured1.png)
+<img src="img/errorCaptured1.png" style="width:50%;" alt="errorCaptured1"/>
 
 --
 
-![errorCaptured2](./img/errorCaptured2.png)
+<img src="img/errorCaptured2.png" style="width:70%;" alt="errorCaptured2"/>
 
 --
 
@@ -280,27 +304,31 @@ slideNumber: true
 
 --
 
+**子コンポーネントエラーハンドリングの実装**
+
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/ErrorBoundary.vue)
 
 --
 
 ### 10.7.2 グローバルなエラーハンドリング
 
-![errorHandler1](./img/errorHandler1.png)
+<img src="img/errorHandler1.png" style="width:40%;" alt="errorHandler1"/>
 
 --
 
-![errorHandler2](./img/errorHandler2.png)
+<img src="img/errorHandler2.png" style="width:50%;" alt="errorHandler2"/>
 
 --
 
-![errorHandler3](./img/errorHandler3.png)
+<img src="img/errorHandler3.png" style="width:60%;" alt="errorHandler3"/>
 
 --
 
-![errorHandler4](./img/errorHandler4.png)
+<img src="img/errorHandler4.png" style="width:50%;" alt="errorHandler4"/>
 
 --
+
+**グローバルなエラーハンドリングの実装**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/main.js)
 
@@ -316,7 +344,7 @@ slideNumber: true
 
 --
 
-![dist](./img/dist.png)
+<img src="img/dist.png" style="width:50%;" alt="dist"/>
 
 --
 
@@ -329,6 +357,8 @@ slideNumber: true
 
 ## 10.9 パフォーマンス測定・改善
 
+--
+
 - よりよいユーザ体験のためにパフォーマンス改善が必要
 - Webアプリ一般では、サーバレスポンスの向上などが大切
 - Vue.jsアプリでは、JavaScriptによるレンダリングの高速化が重要
@@ -337,7 +367,7 @@ slideNumber: true
 
 ### 10.9.1 パフォーマンス測定の設定方法
 
-![performance](./img/performance.png)
+<img src="img/performance.png" style="width:80%;" alt="performance"/>
 
 --
 
