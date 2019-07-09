@@ -80,6 +80,8 @@ slideNumber: true
 
 - API設計は「9.2.3 KbnButtonコンポーネントのAPI」参照
 - 9.2.3の設計項目に対してテストしている
+- [Mocha](https://mochajs.org/)というJSテストフレームワークを利用
+- 振る舞い駆動開発(BDD)でテストコードを書く
 
 --
 
@@ -87,13 +89,13 @@ slideNumber: true
 
 --
 
-**KbnButtoの例１**
+**KbnButtonの例１**
 
 <img src="img/KbnButton1.png" style="width:70%;" alt="KbnButton1"/>
 
 --
 
-**KbnButtoの例２**
+**KbnButtonの例２**
 
 <img src="img/KbnButton2.png" style="width:70%;" alt="KbnButton2"/>
 
@@ -117,9 +119,11 @@ slideNumber: true
 
 --
 
-**KbnLoginForm.vue**
+![KbnLoginFormTest1](./img/KbnLoginFormTest1.png)
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/molecules/KbnLoginForm.vue)
+--
+
+![KbnLoginFormTest2](./img/KbnLoginFormTest2.png)
 
 --
 
@@ -130,11 +134,9 @@ slideNumber: true
 
 --
 
-![KbnLoginFormTest1](./img/KbnLoginFormTest1.png)
+**KbnLoginForm.vue**
 
---
-
-![KbnLoginFormTest2](./img/KbnLoginFormTest2.png)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/molecules/KbnLoginForm.vue)
 
 --
 
@@ -145,13 +147,13 @@ slideNumber: true
 
 --
 
-**KbnLoginView.vue**
-
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/templates/KbnLoginView.vue)
+![KbnLoginViewTest](./img/KbnLoginViewTest.png)
 
 --
 
-![KbnLoginViewTest](./img/KbnLoginViewTest.png)
+**KbnLoginView.vue**
+
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/components/templates/KbnLoginView.vue)
 
 ---
 
@@ -166,17 +168,21 @@ slideNumber: true
 
 --
 
+![LoginActionHandlerTest](./img/LoginActionHandlerTest.png)
+
+--
+
 **loginアクションハンドラの実装**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/actions.js)
 
 --
 
-![LoginActionHandlerTest](./img/LoginActionHandlerTest.png)
+### 10.3.2 AUTH_LOGINミューテーションハンドラ
 
 --
 
-### 10.3.2 AUTH_LOGINミューテーションハンドラ
+![MutationHandlerTest](./img/MutationHandlerTest.png)
 
 --
 
@@ -186,21 +192,17 @@ slideNumber: true
 
 --
 
-![MutationHandlerTest](./img/MutationHandlerTest.png)
+### 10.3.3 AuthAPIモジュール
 
 --
 
-### 10.3.3 AuthAPIモジュール
+![AuthAPIModuleTest](./img/AuthAPIModuleTest.png)
 
 --
 
 **Auth APIモジュール**
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/api/auth.js)
-
---
-
-![AuthAPIModuleTest](./img/AuthAPIModuleTest.png)
 
 ---
 
@@ -215,14 +217,13 @@ slideNumber: true
 
 --
 
-**beforeEachガードフックの実装**
-
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/router/guards.js)
+![BeforeEachGuardHookTest](./img/BeforeEachGuardHookTest.png)
 
 --
 
-![BeforeEachGuardHookTest](./img/BeforeEachGuardHookTest.png)
+**beforeEachガードフックの実装**
 
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/router/guards.js)
 
 ---
 
