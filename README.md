@@ -345,15 +345,18 @@ slideNumber: true
 
 --
 
-**E2Eテストコード**
+### 10.6.1 E2Eテストの実装
 
 [テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/e2e/specs/login.js)
+- 確認項目はログイン後、ボードページにリダイレクトすること
+
 
 --
 
-**試験項目**
+### 10.6.2 テストの実行
 
-![e2eTest](./img/e2eTest.png)
+<img src="img/e2eTest.png" style="width:60%;" alt="e2eTest"/>
+- 3件のwaitForXXXが試験項目としてカウントされているが、確認項目は先述の１件
 
 ---
 
@@ -373,15 +376,25 @@ slideNumber: true
 
 ### 10.7.1 子コンポーネントのエラーハンドリング
 
-<img src="img/errorCaptured1.png" style="width:50%;" alt="errorCaptured1"/>
+--
+
+- Vueは任意の子コンポーネントのエラーハンドリングのためにコンポーネントのライフサイクルAPIとしてerrorCapturedフックを提供する
+
+<img src="img/errorCaptured1.png" style="width:40%;" alt="errorCaptured1"/>
 
 --
 
-<img src="img/errorCaptured2.png" style="width:70%;" alt="errorCaptured2"/>
+- 親コンポーネントもerrorCapturedフックを実装していると、子のエラーが親にも伝播する
+
+<img src="img/errorCaptured2.png" style="width:60%;" alt="errorCaptured2"/>
 
 --
 
-![errorCaptured3](./img/errorCaptured3.png)
+- errorCapturedフックでfalseを返すと、上位コンポーネントへは伝播しない
+- 子コンポーネントツリーのエラーを回復できる場合はfalseを返してよい
+- でなければユーザ向けにメッセージ出力すべき
+
+<img src="img/errorCaptured3.png" style="width:50%;" alt="errorCaptured3"/>
 
 --
 
@@ -389,29 +402,43 @@ slideNumber: true
 
 [コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/ErrorBoundary.vue)
 
+- ユーティリティ的なコンポーネントとして実装して使いまわすデザインパターンが推奨
+
 --
 
 ### 10.7.2 グローバルなエラーハンドリング
+
+--
+
+- Vue.jsはコンポーネントに閉じないグローバルなエラーハンドリングも提供している
+- Vue.config.errorHandlerフックを用いる
 
 <img src="img/errorHandler1.png" style="width:40%;" alt="errorHandler1"/>
 
 --
 
-<img src="img/errorHandler2.png" style="width:50%;" alt="errorHandler2"/>
+- Vue.config.errorHandlerフックはerrorCapturedフックと同じインタフェースでエラーを捕捉する
+- Vue.config.errorHandlerフックとerrorCapturedフックは併用可能
+
+<img src="img/errorHandler2.png" style="width:30%;" alt="errorHandler2"/>
 
 --
 
-<img src="img/errorHandler3.png" style="width:60%;" alt="errorHandler3"/>
+- errorCapturedフックでfalseを返す場合はエラー伝播が止まるので、Vue.config.errorHandlerフックはエラーを捕捉できない
+
+<img src="img/errorHandler3.png" style="width:40%;" alt="errorHandler3"/>
 
 --
 
-<img src="img/errorHandler4.png" style="width:50%;" alt="errorHandler4"/>
+- errorCapturedフック自身が発生させたエラーはVue.config.errorHandlerフックが捕捉する
+
+<img src="img/errorHandler4.png" style="width:40%;" alt="errorHandler4"/>
 
 --
 
 **グローバルなエラーハンドリングの実装**
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/main.js)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/main.js#L14-L18)
 
 ---
 
