@@ -449,9 +449,13 @@ slideNumber: true
 
 ### 10.8.1 アプリケーションのビルド
 
-![npmRunBuild](./img/npmRunBuild.png)
+<img src="img/npmRunBuild.png" style="width:60%;" alt="npmRunBuild"/>
+
+- *ビルド結果。コンソールでnpm run buildするとnode build/build.jsが実行されるっぽいので、やっていることは同じっぽい*
 
 --
+
+**ビルドされたアセットファイル群**
 
 <img src="img/dist.png" style="width:50%;" alt="dist"/>
 
