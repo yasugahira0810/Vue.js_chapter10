@@ -85,6 +85,8 @@ slideNumber: true
 
 --
 
+**試験項目**
+
 <img src="img/KbnButtonTest.png" style="width:60%;" alt="KbnButtonTest"/>
 
 --
@@ -119,13 +121,19 @@ slideNumber: true
 
 --
 
-![KbnLoginFormTest1](./img/KbnLoginFormTest1.png)
+**試験項目1/2**
+
+<img src="img/KbnLoginFormTest1.png" style="width:80%;" alt="KbnLoginFormTest1"/>
 
 --
 
-![KbnLoginFormTest2](./img/KbnLoginFormTest2.png)
+**試験項目2/2**
+
+<img src="img/KbnLoginFormTest2.png" style="width:80%;" alt="KbnLoginFormTest2"/>
 
 --
+
+**試験対象プロパティ**
 
 ![KbnLoginFormList](./img/KbnLoginFormList.png)
 
@@ -150,6 +158,8 @@ slideNumber: true
 
 --
 
+**試験項目**
+
 ![KbnLoginViewTest](./img/KbnLoginViewTest.png)
 
 --
@@ -169,9 +179,21 @@ slideNumber: true
 
 - データフロー設計は「9.3.2 データフロー」参照
 
+<img src="img/dataFlow.png" style="width:60%;" alt="dataFlow"/>
+
 --
 
+**試験項目**
+
 ![LoginActionHandlerTest](./img/LoginActionHandlerTest.png)
+
+--
+
+**試験イメージ**
+
+<img src="img/dataFlow2.png" style="width:70%;" alt="dataFlow2"/>
+
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/store/actions/login.spec.js)
 
 --
 
@@ -184,6 +206,8 @@ slideNumber: true
 ### 10.3.2 AUTH_LOGINミューテーションハンドラ
 
 --
+
+**試験項目**
 
 ![MutationHandlerTest](./img/MutationHandlerTest.png)
 
@@ -198,6 +222,8 @@ slideNumber: true
 ### 10.3.3 AuthAPIモジュール
 
 --
+
+**試験項目**
 
 ![AuthAPIModuleTest](./img/AuthAPIModuleTest.png)
 
@@ -219,6 +245,8 @@ slideNumber: true
 - ルーティング設計は「9.4 ルーティング設計」参照
 
 --
+
+**試験項目**
 
 ![BeforeEachGuardHookTest](./img/BeforeEachGuardHookTest.png)
 
@@ -294,6 +322,8 @@ slideNumber: true
 [テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/e2e/specs/login.js)
 
 --
+
+**試験項目**
 
 ![e2eTest](./img/e2eTest.png)
 
