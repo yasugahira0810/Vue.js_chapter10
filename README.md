@@ -191,7 +191,7 @@ slideNumber: true
 
 **試験イメージ**
 
-<img src="img/dataFlow2.png" style="width:70%;" alt="dataFlow2"/>
+<img src="img/dataFlow2.png" style="width:60%;" alt="dataFlow2"/>
 
 [テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/store/actions/login.spec.js)
 
@@ -213,13 +213,27 @@ slideNumber: true
 
 --
 
+**試験イメージ**
+
+<img src="img/mutation.png" style="width:60%;" alt="mutation"/>
+
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/store/mutations/auth_login.spec.js)
+
+--
+
 **AUTH_LOGINミューテーションハンドラの実装**
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/mutations.js)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/store/mutations.js#L3-L6)
 
 --
 
 ### 10.3.3 AuthAPIモジュール
+
+- 前節まででデータフローは概ね実装した
+- loginアクションハンドラ内で呼び出すAuth APIモジュールが未実装なので実装する
+
+<img src="img/AuthAPI.png" style="width:40%;" alt="AuthAPI"/>
+<img src="img/AuthAPICode.png" style="width:50%;" alt="AuthAPICode"/>
 
 --
 
@@ -227,11 +241,15 @@ slideNumber: true
 
 ![AuthAPIModuleTest](./img/AuthAPIModuleTest.png)
 
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/api/auth.spec.js)
+
+- バックエンドを模倣したサーバを動作させず、JavaScriptのコードレベルでAPIの仕様に沿った通信結果を返すモックを実装
+
 --
 
 **Auth APIモジュール**
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/api/auth.js)
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/src/api/auth.js#L4-L12)
 
 ---
 
@@ -243,12 +261,16 @@ slideNumber: true
 ### 10.4.1 beforeEachガードフックを活用したナビゲーションガード
 
 - ルーティング設計は「9.4 ルーティング設計」参照
+- Vue RouterのbeforeEachガードフックを活用して、ログイン済みチェックをするナビゲーションガードを実装する
 
 --
 
 **試験項目**
 
 ![BeforeEachGuardHookTest](./img/BeforeEachGuardHookTest.png)
+
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/router/guards.spec.js)
+- テストコード内でVue Routerによるルート定義やVuexで状態設定をして、ローカルなVue環境を作成している
 
 --
 
@@ -263,6 +285,13 @@ slideNumber: true
 
 --
 
+- 書籍ではここまでテストコードを書いてテスト駆動開発をしてきた。ボトムアップ的にアプリ開発できる点が強み
+- ただこのアプローチだとUIやレイアウトなどの見た目や振る舞いを確認できない
+- 結局のところサーバとブラウザを使った確認は必須。本節ではnpm run devで開発サーバを起動する
+- 併せてVue DevToolsを使ったデバッグや性能チェックについて紹介
+
+--
+
 ### 10.5.1 開発サーバーによる開発
 
 - バックエンドのAPIサーバーを作成していないので、ログインボタンをクリックしても404になる
@@ -274,17 +303,16 @@ slideNumber: true
 
 **エンドポイント/auth/loginのモック**
 
-[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/build/dev-server.js)
-
---
+[コード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/build/dev-server.js#L56-L69)
 
 - 以下のレスポンスを返す簡易的な実装
 ![dev-serverResponse](./img/dev-serverResponse.png)
 
 --
 
-- Vue UIのstartを実行すると「npm run dev」が実行されるので、これでいい感ある
+**開発サーバ起動**
 
+- Vue UIのstartを実行すると「npm run dev」が実行されるので、これでいい感ある
 ![VueUIStart](./img/VueUIStart.png)
 
 --
