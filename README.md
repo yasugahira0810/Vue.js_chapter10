@@ -18,7 +18,7 @@ slideNumber: true
 - *書籍の要約は正体、担当者の理解で書いているところは斜体で記載しています*
 - *権利関係で問題があればご指摘ください*
 - *vscode-revealで見てもらうことを想定しています(Windowsは改行コードをLFにして見てください)*
-- *コードは書いておらず、サンプルコードを動かしながら資料作ったので、コードの詳細までは理解できていないです...*
+- *コードは書いておらず、サンプルコードを動かしながら資料を作ったので、概要をさらうイメージで見てください*
 
 --
 
@@ -35,21 +35,16 @@ slideNumber: true
 
 --
 
-### メモ
-
-- :class="classes" データバインディングをするv-bindの省略記法
-- @click="handleClick" イベントハンドリングをするv-onの省略記法
-- ログイン情報: foo@domain.com/12345678
-- propsDataは親コンポーネントからpropsとして渡されたものとしてテストで使用できる[[参考](https://lmiller1990.github.io/vue-testing-handbook/ja/components-with-props.html#propsdata%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E4%BD%BF%E3%81%84%E6%96%B9)]
-
---
-
 ## 10章のスコープ（概要）
 
 - 大きく２つに分かれる
   + 10.2〜10.4 ログインページの実装
   + 10.5〜10.9 Vue.js開発を支える技術
-- ボードページ、タスク詳細ページの実装の解説はしない（書籍自体に解説が載っていないので）
+- ボードページ、タスク詳細ページの実装には触れていない
+- なおアプリケーションのログイン情報は以下の通り
+  + メールアドレス: foo@domain.com
+  + パスワード: 12345678
+
 
 ---
 
@@ -88,6 +83,8 @@ slideNumber: true
 **試験項目**
 
 <img src="img/KbnButtonTest.png" style="width:60%;" alt="KbnButtonTest"/>
+
+[テストコード（GitHubへ飛ぶ）](https://github.com/yasugahira0810/Vue.js_chapter10/blob/master/kanban-app/test/unit/specs/components/atoms/KbnButton.spec.js)
 
 --
 
